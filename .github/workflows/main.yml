@@ -111,8 +111,8 @@ jobs:
       # Generate 'git' credential in base of the workflow's author.
     - name: Set-up 'git' credential(s)
       run: |
-        git config --global user.name "${{ github.actor }}"
-        git config --global user.email "${{ github.actor_id }}+${{ github.actor }}@users.noreply.github.com"
+        git config --global user.name "dib12"
+        git config --global user.email "61652361+dib12@users.noreply.github.com"
         if [ -z ${GITHUB_TOKEN} ]; then
           echo machine github.com login ${GITHUB_TOKEN} password ${GITHUB_TOKEN} >> ${PWD}/.netrc
         fi
@@ -201,7 +201,7 @@ jobs:
         repo sync -c -j\$(nproc --all) --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync  && \
 
         # Set up build environment
-        export BUILD_USERNAME=${{ github.actor }} ; \
+        export BUILD_USERNAME=android-builder ; \
         export BUILD_HOSTNAME=crave ; \
         source build/envsetup.sh && \
 
