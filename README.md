@@ -10,12 +10,17 @@
 [stars-shield]: https://img.shields.io/github/stars/sounddrill31/crave_aosp_builder.svg?style=for-the-badge
 [stars-url]: https://github.com/sounddrill31/crave_aosp_builder/stargazers
 
+## Wiki
+While using this repo, please take a look at [the wiki](https://opendroid.pugzarecute.com/wiki) as well!
+
 ## Prerequisites 
 foss.crave.io account
 
+This workflow assumes you know basics of android building and github actions. Please read the Readme thoroughly before asking questions.
+
 ## Setup Instructions
 - Download crave.conf from API Keys of foss.crave.io dashboard
-- Fork this repo
+- Fork this repo(please avoid importing it via the import menu or manually copying the workflow file. This hurts fork stats and makes it harder for you to update the repo to the latest version)
 - Go to (repo) Settings -> Security -> Secrets and Variables -> Actions
 - Copy your username and authentication token from crave.conf
 ![Repository Secrets](assets/cravetoken.png)
@@ -27,6 +32,11 @@ foss.crave.io account
 
 - Go to Settings -> Code and Automation -> Actions -> General
 - Set workflow Permissions to "Read and Write Permissions" and save.
+
+If this is greyed out and you're building from a Github Organization, 
+
+go to Organization settings -> Code, planning, and automation -> Actions -> General -> Workflow permissions, set it to "Read and Write Permissions" and save
+
 - Now you are ready to build! Go to "Crave Builder" workflow and start building
 ## Selfhosted Runners:
 These runners sit in crave devspace CLI or your personal server and run the workflow on there. Use this if you need to bypass the 6 hours timeout limit.
@@ -85,6 +95,8 @@ If this exists, these files will be uploaded too. Remember to use relative path 
 Bot token for telegram notifications
 ### TELEGRAM_TO (Optional)
 Chat id for telegram notifications
+### CRAVE_FLAGS (Optional)
+Extra flags for crave binary
 ### TG_UPLOAD_LIMIT (Optional)
 Custom Upload limit for telegram-upload. Default is 2147483648
 ### GH_UPLOAD_LIMIT (Optional)
