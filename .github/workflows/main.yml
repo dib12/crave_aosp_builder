@@ -37,19 +37,19 @@ on:
       LOCAL_MANIFEST:
         description: "Personal local manifest [repository or raw]:"
         required: true
-        default: 'https://github.com/sounddrill31/local_manifests_oxygen'
+        default: 'https://github.com/dib12/local_manifest'
       LOCAL_MANIFEST_BRANCH:
         description: "Personal local manifest's branch:"
         required: false
-        default: 'lineage-21-qpr3'
+        default: 'lineage-21'
       DEVICE_NAME:
         description: "Device's codename:"
         required: true
-        default: "oxygen"
+        default: "vince"
       PRODUCT_NAME:
         description: "Product to build:"
         required: true
-        default: "oxygen"
+        default: "vince"
       BUILD_COMMAND:
         description: 'Command to be used for compiling:'
         required: true
@@ -57,7 +57,7 @@ on:
       BUILD_TYPE:
         description: 'Type of build:'
         required: true
-        default: 'userdebug'
+        default: 'user'
         type: choice
         options: 
         - 'eng'
@@ -455,7 +455,7 @@ jobs:
         /opt/crave/resync.sh  && \
 
         # Set up build environment
-        export BUILD_USERNAME=${{ github.actor }} ; \
+        export BUILD_USERNAME=android-builder ; \
         export BUILD_HOSTNAME=crave ; \
         source build/envsetup.sh && \
 
